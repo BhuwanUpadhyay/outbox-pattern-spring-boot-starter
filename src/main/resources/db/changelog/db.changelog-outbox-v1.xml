@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="ps.bhuwan.upadhyay" id="outbox-v1-3902cbca-4268-47a8-a288-705c8e7ddc76">
+        <createTable tableName="outbox">
+            <column name="outbox_id" type="VARCHAR(36)">
+                <constraints primaryKey="true" primaryKeyName="outbox_pkey"/>
+            </column>
+            <column name="occurred_on" type="timestamp"/>
+            <column name="event_data" type="VARCHAR(10485760)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
