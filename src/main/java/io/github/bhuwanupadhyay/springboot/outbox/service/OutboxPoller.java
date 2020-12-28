@@ -54,8 +54,8 @@ public class OutboxPoller {
                     timeElapsed,
                     properties.getMaxEventsPerPolling()
             );
-            double avg = (double) info.getCount() / (double) timeElapsed;
-            log.info("Outbox relay rate [avg={}ms].", String.format("%.2f", avg));
+            double avg =  (double) timeElapsed / (double) info.getCount();
+            log.info("Outbox relay rate [avg={}ms per outbox].", String.format("%.2f", avg));
         } else {
             log.info("No outboxes found.");
         }
