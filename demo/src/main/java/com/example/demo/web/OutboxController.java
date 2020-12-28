@@ -26,7 +26,7 @@ public class OutboxController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping
+    @GetMapping("/outboxes/configs")
     public ResponseEntity<OutboxProperties> getProperties() {
         return ResponseEntity.ok(properties);
     }
